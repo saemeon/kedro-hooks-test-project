@@ -24,9 +24,6 @@ dependencies = [
     "kedro-psutil-telemetry",
 ]
 
-[tool.uv.sources]
-kedro-psutil-telemetry = { path = "../kedro-psutil-telemetry", editable = true }
-
 [project.urls]
 Homepage = "https://github.com/saemeon/kedro-psutil-telemetry"
 Repository = "https://github.com/saemeon/kedro-psutil-telemetry"
