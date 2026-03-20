@@ -1,5 +1,5 @@
-import mypackage
+import kedro_hooks_test
 
 
 def test_import():
-    assert mypackage.__version__ != "unknown"
+    assert kedro_hooks_test.__version__ != "unknown"
