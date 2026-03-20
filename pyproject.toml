@@ -1,14 +1,13 @@
 [project]
-name = "mypackage"
+name = "kedro-hooks-test"
 dynamic = ["version"]
-description = "A short description of your package"
-keywords = ["keyword1", "keyword2"]
+description = "Dummy Kedro project to test kedro-psutil-telemetry hook autodetection"
+keywords = ["kedro", "hooks", "testing"]
 classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: 3.14",
     "Operating System :: OS Independent",
 ]
 readme = "README.md"
@@ -20,26 +19,25 @@ maintainers = [
     { name = "Simon Niederberger", email = "s.niederberger@hotmail.com" },
 ]
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "kedro>=0.19",
+    "kedro-psutil-telemetry",
+]
+
+[tool.uv.sources]
+kedro-psutil-telemetry = { path = "../kedro-psutil-telemetry", editable = true }
 
 [project.urls]
-Homepage = "https://github.com/saemeon/mypackage"
-Repository = "https://github.com/saemeon/mypackage"
+Homepage = "https://github.com/saemeon/kedro-psutil-telemetry"
+Repository = "https://github.com/saemeon/kedro-psutil-telemetry"
 
 [dependency-groups]
 test = ["pytest", "pytest-cov"]
-doc = [
-    "mkdocs",
-    "mkdocs-material",
-    "mkdocstrings[python]",
-    "mike",
-]
 dev = [
     "ruff",
     "prek",
     "ty",
     { include-group = "test" },
-    { include-group = "doc" },
 ]
 
 [build-system]
@@ -54,11 +52,11 @@ local_scheme = "no-local-version"
 where = ["src"]
 
 [tool.setuptools.package-data]
-mypackage = ["py.typed"]
+kedro_hooks_test = ["py.typed"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "--cov=src/mypackage --cov-report=term-missing"
+addopts = "--cov=src/kedro_hooks_test --cov-report=term-missing"
 
 [tool.ty.src]
 include = ["src"]
@@ -70,3 +68,12 @@ target-version = "py310"
 [tool.ruff.lint]
 select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "SIM", "RUF", "PERF"]
 ignore = ["E203"]
+
+[tool.kedro]
+package_name = "kedro_hooks_test"
+project_name = "kedro-hooks-test-project"
+kedro_init_version = "1.2.0"
+source_dir = "src"
+
+[tool.kedro_telemetry]
+project_id = "bf5d598638994faf8dd9474fe486fdda"

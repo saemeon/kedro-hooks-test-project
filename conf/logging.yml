@@ -1,0 +1,17 @@
+version: 1
+
+disable_existing_loggers: False
+
+handlers:
+  rich:
+    class: kedro.logging.RichHandler
+    rich_tracebacks: True
+
+loggers:
+  kedro:
+    level: INFO
+  kedro_psutil_telemetry:
+    level: INFO
+
+root:
+  handlers: [rich]

@@ -5,6 +5,6 @@
 from importlib.metadata import PackageNotFoundError, version
 
 try:
-    __version__ = version("mypackage")
+    __version__ = version("kedro-hooks-test")
 except PackageNotFoundError:
     __version__ = "unknown"
