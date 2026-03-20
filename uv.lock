@@ -494,7 +494,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "kedro", specifier = ">=0.19" },
-    { name = "kedro-psutil-telemetry", editable = "../kedro-psutil-telemetry" },
+    { name = "kedro-psutil-telemetry" },
 ]
 
 [package.metadata.requires-dev]
@@ -512,44 +512,15 @@ test = [
 
 [[package]]
 name = "kedro-psutil-telemetry"
-source = { editable = "../kedro-psutil-telemetry" }
+version = "0.0.2"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "kedro" },
     { name = "psutil" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "kedro", specifier = ">=0.18" },
-    { name = "mlflow", marker = "extra == 'mlflow'", specifier = ">=2.0" },
-    { name = "psutil", specifier = ">=5.8" },
-]
-provides-extras = ["mlflow"]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "mike" },
-    { name = "mkdocs" },
-    { name = "mkdocs-material" },
-    { name = "mkdocstrings", extras = ["python"] },
-    { name = "mlflow" },
-    { name = "pluggy", specifier = ">=1.6.0" },
-    { name = "prek" },
-    { name = "pytest" },
-    { name = "pytest-cov" },
-    { name = "ruff" },
-    { name = "ty" },
-]
-doc = [
-    { name = "mike" },
-    { name = "mkdocs" },
-    { name = "mkdocs-material" },
-    { name = "mkdocstrings", extras = ["python"] },
-]
-test = [
-    { name = "mlflow" },
-    { name = "pytest" },
-    { name = "pytest-cov" },
+sdist = { url = "https://files.pythonhosted.org/packages/29/c0/64b336b6e6aabc11fad7e3a785494787117b8dfb44a4ccba0b782d42e35b/kedro_psutil_telemetry-0.0.2.tar.gz", hash = "sha256:835ae9e31fbf3007c76ba1a5e98e4b7d9f5deb8e40becc945a882a4e1768449a", size = 213220, upload-time = "2026-03-20T19:04:28.168Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/9e/8b/b7145bc6bce78caee0139b019477e82a887d2b7379d38946fb126bd17a2f/kedro_psutil_telemetry-0.0.2-py3-none-any.whl", hash = "sha256:dd3c7961026f5e96140892edde8c07529a96c103c7851f1d8c98c026a8876763", size = 8163, upload-time = "2026-03-20T19:04:26.527Z" },
 ]
 
 [[package]]

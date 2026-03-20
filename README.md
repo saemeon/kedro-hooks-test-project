@@ -2,7 +2,7 @@
 
 Test project for [kedro-psutil-telemetry](https://github.com/saemeon/kedro-psutil-telemetry).
 
-Runs a dummy three-node Kedro pipeline to verify that the hook is auto-discovered via entry points and that telemetry output appears correctly.
+Demonstrates two hook setup modes for a dummy three-node pipeline.
 
 ## Setup
 
@@ -12,11 +12,17 @@ uv sync
 
 ## Run
 
+### Auto-discovery (default) — hook registered via entry point, no `settings.py` changes needed
+
 ```bash
 uv run kedro run
 ```
 
-You should see per-node telemetry samples (RSS, CPU, disk I/O, network) in the log, and a peak summary at the end.
+### Explicit setup — hook manually instantiated with custom `interval`, `prefix`, and `sink`
+
+```bash
+KEDRO_HOOK_SETUP=explicit uv run kedro run
+```
 
 ## License
 
