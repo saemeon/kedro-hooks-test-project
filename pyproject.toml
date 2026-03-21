@@ -1,7 +1,7 @@
 [project]
 name = "kedro-hooks-test"
 dynamic = ["version"]
-description = "Dummy Kedro project to test kedro-psutil-telemetry hook autodetection"
+description = "Dummy Kedro project to test kedro-psutil-telemetry and kedro-intercept hooks"
 keywords = ["kedro", "hooks", "testing"]
 classifiers = [
     "Programming Language :: Python :: 3.10",
@@ -22,6 +22,7 @@ requires-python = ">=3.10"
 dependencies = [
     "kedro>=0.19",
     "kedro-psutil-telemetry",
+    "kedro-intercept",
 ]
 
 [project.urls]
